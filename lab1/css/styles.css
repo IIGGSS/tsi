@@ -1,0 +1,35 @@
+li{
+	margin-right: 50px;
+}
+img{
+	width: 100%;
+}
+a{
+	color: black;
+}
+.a{
+	color: aliceblue;
+}
+.container {
+    background-color: black;
+    color: white;
+}
+
+.text {
+    background-color: black;
+    color: white;
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu__col {
+	display: flex;
+}
+
+.photo__container {
+	width: 500px;
+}
