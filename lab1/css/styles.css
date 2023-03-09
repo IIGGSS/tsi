@@ -1,3 +1,17 @@
+@import url('reset.css');
+@import url(https://fonts.googleapis.com/css?family=Rokkitt:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lobster:regular);
+body{
+	font-size: 24px;
+	background-color: floralwhite;
+	background: url('../img/b.jpg') top no-repeat;
+	background-position: left bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 li{
 	margin-right: 50px;
 }
@@ -5,31 +19,107 @@ img{
 	width: 100%;
 }
 a{
-	color: black;
-}
-.a{
-	color: aliceblue;
-}
-.container {
-    background-color: black;
-    color: white;
+	color: inherit;
+	text-decoration: none;
+	text-align: center;
 }
 
-.text {
-    background-color: black;
-    color: white;
+.container {
+	 max-width: 1200px;
+	 margin: 0 auto;
+	 flex: 0 0 50%;
+}
+.wrapper{
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.header{
+	font-family: 'Rokkitt';
+	box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+	padding: 20px;
+	background-color: aliceblue;
+	position: sticky;
+	left: 0;
+	top:0;
 }
 
 .header__container {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+}
+
+.main{
+	flex-grow: 1;
 }
 
 .menu__col {
 	display: flex;
 }
 
-.photo__container {
-	width: 500px;
+.main__photo {
+	letter-spacing: 5px;
+	text-align: center;
+	padding: 80px;
+	color: aliceblue;
+	font-size: 50px
+	
+}
+
+.main__data{
+	border-top: 2px solid aliceblue;
+	border-bottom: 2px solid aliceblue;
+	padding-top: 50px;
+	margin-bottom: 210px;
+}
+.block{
+	padding: 20px;
+}
+.main__container{
+	margin-bottom: 50px;
+	background-color: rgba(255, 255, 255, 0.623);
+}
+.title{
+	font-size: 28px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	padding-bottom: 50px;
+}
+.footer{
+	padding: 20px 0;
+	background-color: #000;
+	color: aliceblue;
+}
+.photos{
+	background-color: #000;
+	padding: 20px 0;
+	margin-bottom: 50px;
+}
+.photos__row{
+	display: flex;
+	justify-content: space-around;
+}
+.photos__col{
+	width: 300px;
+}
+#links{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.link{
+	display: block;
+	width: 50px;
+	margin-bottom: 5px;
+}
+.copyright{
+	font-size: 12px;
+	text-align: center;
+	padding-right: 50px;
 }
