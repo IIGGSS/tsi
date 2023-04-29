@@ -1,176 +1,139 @@
-const select = document.querySelector("#inputSelect");
+const number = document.querySelector("#inputNumb");
 const result = document.querySelector("#resultFirstExercise");
-const etherium = {
-  usd: 2811,
-  rub: 200612,
-  eur: 2666,
-};
-function getRate(arg1) {
-  return etherium[arg1];
+function sumArray(arg1) {
+  let a = arg1.toString().split(" ");
+  let sum = 0;
+  a.forEach((el) => {
+    sum += Number(el);
+  });
+  return sum;
 }
-select.addEventListener("input", () => {
-  result.textContent = getRate(select.value);
+number.addEventListener("input", () => {
+  result.textContent = sumArray(number.value);
 });
 //-----------------------------------------------------------------
-const x = document.querySelector("#inputSecond");
+const temper = document.querySelector("#inputTemp");
 const result1 = document.querySelector("#resultSecondExercise");
-const j = {
-  lang: "JavaScript",
-  course: "Third",
-};
-const p = {
-  lang: "Python",
-  course: "Third",
-};
-const c = {
-  lang: "C++",
-  course: "Third",
-};
-function getValues(arg1) {
-  if (arg1 == "JavaScript") {
-    console.log(Object.entries(j));
-    return Object.entries(j);
-  } else if (arg1 == "Python") {
-    console.log(Object.entries(p));
-    return Object.entries(p);
-  } else if (arg1 == "C++") {
-    console.log(Object.entries(c));
-    return Object.entries(c);
-  } else {
-    return "Введите значение из списка";
-  }
+function getAboveZero(arg1) {
+  let a = arg1.toString().split(" ");
+  let b = a.filter((t) => t >= 0);
+  return b.toString();
 }
-x.addEventListener("input", () => {
-  result1.textContent = getValues(x.value);
+temper.addEventListener("input", () => {
+  result1.textContent = getAboveZero(temper.value);
 });
 //-----------------------------------------------------------------
-const x1 = document.querySelector("#inputThird");
+const pony = document.querySelector("#inputPony");
 const result2 = document.querySelector("#resultThirdExercise");
-const adress = {
-  street: "Lenina",
-  building: 1,
-  flat: 40,
-};
-const book = {
-  name: "somebook",
-  publishingHouse: "asdasd",
-  pages: 23,
-};
-const car = {
-  company: "toyota",
-  model: "mark2",
-  condition: "new",
-};
-function getInfo(arg1) {
-  if (arg1 == "1") {
-    return Object.keys(adress);
-  } else if (arg1 == "2") {
-    return Object.keys(book);
-  } else if (arg1 == "3") {
-    return Object.keys(car);
-  } else {
-    return "Введите значение из списка";
-  }
+const listPony = [
+  "TwilightSparkle",
+  "RainbowDash",
+  "AppleJack",
+  "Rarity",
+  "Pinkie Pie",
+  "Fluttershy",
+];
+function getPonies(arg1) {
+  return listPony.includes(arg1.toString()) ? arg1.toString() : false;
 }
-x1.addEventListener("input", () => {
-  result2.textContent = getInfo(x1.value);
+pony.addEventListener("input", () => {
+  result2.textContent = getPonies(pony.value);
 });
 //-----------------------------------------------------------------
+const tr = document.querySelector("#inputTr");
 const result3 = document.querySelector("#resultFourthExercise");
-const o1 = {
-  asd: "asd",
-  zxc: "zxc",
-};
-const o2 = {
-  qwe: "qwe",
-  rty: "rty",
-};
-function joinObj(arg1, arg2) {
-  let n = { ...arg1, ...arg2 };
-  return typeof n;
+const listTr = ["0xaea0", "0x8f80", "0xf3ad", "0x17ec"];
+function isTxIncluded(arg1) {
+  return listTr.includes(arg1.toString());
 }
-console.log(joinObj(o1, o2));
-result3.textContent = joinObj(o1, o2);
-//-----------------------------------------------------------------
-const x2 = document.querySelector("#inputFifth");
-const x3 = document.querySelector("#inputFifth1");
-const btn = document.querySelector("#btn");
-const result4 = document.querySelector("#resultFifthExercise");
-class User {
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
-  }
-}
-function createUser(name, email) {
-  let u = new User(name, email);
-  console.log(u);
-  return u.name + " " + u.email;
-}
-btn.addEventListener("click", () => {
-  result4.textContent = createUser(x2.value, x3.value);
+tr.addEventListener("input", () => {
+  result3.textContent = isTxIncluded(tr.value);
 });
 //-----------------------------------------------------------------
+const w = document.querySelector("#inputW");
+const result4 = document.querySelector("#resultFifthExercise");
+function isTxIncluded(arg1) {
+  let a = arg1.toString().split(" ");
+  let b = [];
+  a.forEach((el) => {
+    b.push(el.length);
+  });
+  return b.toString();
+}
+w.addEventListener("input", () => {
+  result4.textContent = isTxIncluded(w.value);
+});
+//-----------------------------------------------------------------
+const w1 = document.querySelector("#inputW1");
 const result5 = document.querySelector("#resultSixthExercise");
-class User1 {
-  constructor(id, isAdmin) {
-    this.id = id;
-    this.admin = isAdmin;
-  }
-  getId() {
-    return "#" + this.id;
-  }
-  isAdmin() {
-    if (this.admin.toLowerCase() == "admin") {
-      return true;
-    } else {
-      return false;
-    }
-  }
+function getWithSpaces(arg1) {
+  let a = arg1.toString().split(" ");
+  let l = 0;
+  let b = [];
+  b.push(a.join(" "));
+  a.forEach((el) => {
+    l += el.length;
+  });
+  b.push(l);
+  return b.toString();
 }
-let u1 = new User1(100, "Admin");
-console.log(u1.getId());
-console.log(u1.isAdmin());
-let u2 = new User1(217, "SimpleUser");
-console.log(u2.getId());
-console.log(u2.isAdmin());
-result5.textContent =
-  u1.getId() + u1.isAdmin() + " " + u2.getId() + u2.isAdmin();
+w1.addEventListener("input", () => {
+  result5.textContent = getWithSpaces(w1.value);
+});
 //-----------------------------------------------------------------
+const ani = document.querySelector("#inputA");
 const result6 = document.querySelector("#resultSeventhExercise");
-class AreaOfCirlce {
-  constructor(r) {
-    this._r = r * 3.14 * 2;
-  }
-  get r() {
-    return this._r;
-  }
-  set r(value) {
-    this._r = Number.parseInt(value, 10) * 3.14 * 2;
+const anime = [
+  {
+    name: "Naruto",
+    episodes: "700+",
+  },
+  {
+    name: "Hajime no Ippo",
+    episodes: 127,
+  },
+  {
+    name: "Samurai X",
+    episodes: 95,
+  },
+  {
+    name: "Bleech",
+    episodes: 366,
+  },
+];
+function getEpisodes(arg1) {
+  let a = anime.find((el) => el.name == arg1.toString());
+  if (a) {
+    return "Аниме " + a.name + " включает " + a.episodes + " серий";
+  } else {
+    return "Такого названия нет в списке";
   }
 }
-
-let area = new AreaOfCirlce(2);
-console.log(area._r);
-area.r = 10;
-console.log(area._r);
-
-result6.textContent = area.r;
+ani.addEventListener("input", () => {
+  result6.textContent = getEpisodes(ani.value);
+});
 //-----------------------------------------------------------------
-const result7 = document.querySelector("#resultEigthExercise");
-class Course {
-  constructor(m) {
-    this.mark = m;
-  }
-  getGrade() {
-    return this.mark > 3 ? true : false;
-  }
-  getCertificate() {
-    return this.getGrade() ? "Выдать сертификат" : "Курс не пройден";
-  }
-}
-const c1 = new Course(5);
-console.log(c1.getCertificate());
-result7.textContent = c1.getCertificate();
-const c2 = new Course(3);
-console.log(c2.getCertificate());
+const ch = document.querySelector("#inputCh");
+const result7 = document.querySelector("#resultEighthExercise");
+const triple = (arg1) => {
+  return Number(arg1) * 3;
+};
+ch.addEventListener("input", () => {
+  result7.textContent = triple(ch.value);
+});
+//-----------------------------------------------------------------
+const gl = document.querySelector("#inputGl");
+const result8 = document.querySelector("#resultNinthExercise");
+const getAvgGlucose = (arg1) => {
+  let a = arg1.split(",");
+  let sr = 0;
+  a.forEach((el) => {
+    sr += Number(el);
+  });
+  sr = sr / a.length;
+  return sr.toFixed(1);
+};
+gl.addEventListener("input", () => {
+  result8.textContent = getAvgGlucose(gl.value);
+});
+//-----------------------------------------------------------------
